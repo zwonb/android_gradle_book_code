@@ -1,0 +1,27 @@
+task closure {
+    doLast {
+        // 使用我们自定义的闭包
+        customEach {
+            println it
+        }
+
+        eachMap { k, v ->
+            // 多个参数
+            println "$k is $v"
+        }
+    }
+}
+
+def customEach(closure) {
+    // 模拟一个有10个元素的集合，开始迭代
+    for (int i in 1..10) {
+        closure(i)
+    }
+}
+
+def eachMap(closure) {
+    def map = ["name": "张三", "age": 22]
+    map.each {
+        closure(it.key, it.value)
+    }
+}

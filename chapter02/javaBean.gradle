@@ -7,5 +7,20 @@ task javaBean {
 
 class Person {
     private String name
+}
 
+task helloJavaBean {
+    Person1 p = new Person1()
+    println "名字是：${p.name}"
+    p.name = "张三"
+    println "名字是：${p.name}"
+    println "年龄是：${p.age}"
+}
+
+class Person1 {
+    private String name
+
+    public int getAge() {
+        return 22
+    }
 }

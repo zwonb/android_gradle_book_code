@@ -1,0 +1,56 @@
+task delegate {
+    doLast {
+        new Delegate().test {
+            println "thisObject:${this.getClass()}"
+            println "owner:${owner.getClass()}"
+            println "delegate:${delegate.getClass()}"
+
+            method1()
+            it.method1()
+        }
+    }
+}
+
+def method1() {
+    println "Context this:${this.getClass()} in root"
+    println "method1 in root "
+}
+
+class Delegate {
+
+    def method1() {
+        println "Delegate this:${this.getClass()} in root"
+        println "method1 in root"
+    }
+
+    def test(Closure<Delegate> closure) {
+        closure(this)
+    }
+}
+
+task configClosure {
+    doLast {
+        person {
+            personName = "张三"
+            personAge = 22
+            dumpPerson()
+        }
+    }
+}
+
+class Person {
+    String personName
+    int personAge
+
+    def dumpPerson() {
+        println "name is ${personName},age is ${personAge}"
+    }
+}
+
+def person(Closure<Person> closure) {
+    Person p = new Person()
+    closure.delegate = p
+    // 委托模式优先
+    closure.setResolveStrategy(Closure.DELEGATE_FIRST)
+    closure(p)
+}
