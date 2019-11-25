@@ -1,0 +1,13 @@
+rootProject.name = 'android_gradle_book_code'
+
+include ':chapter01:0'
+//project(':chapter01:0').projectDir = new File(rootDir, 'chapter01/0')
+include ':chapter01:1'
+
+include ':chapter02:0'
+include ':chapter02:1'
+include ':chapter02:2'
+include ':chapter02:3'
+include ':chapter02:4'
+include ':chapter02:5'
+include ':chapter02:6'

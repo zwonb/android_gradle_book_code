@@ -1,0 +1,15 @@
+task printList {
+    doLast {
+        def numberList = [1, 2, 3, 4, 5, 6]
+        println numberList.getClass().name
+
+        println numberList[1]
+        println numberList[-1] // 访问最后一个元素
+        println numberList[-2] // 倒数第二个元素
+        println numberList[1..3] // 第二到第四个元素
+
+        numberList.each {
+            println it
+        }
+    }
+}

@@ -1,0 +1,30 @@
+task javaBean {
+    doLast {
+        Person person = new Person()
+        println "名字是：${person.name}"
+        person.name = "张三"
+        println "名字是：${person.name}"
+    }
+}
+
+class Person {
+    private String name
+}
+
+task helloJavaBean {
+   doLast {
+       Person1 p = new Person1()
+       println "名字是：${p.name}"
+       p.name = "张三"
+       println "名字是：${p.name}"
+       println "年龄是：${p.age}"
+   }
+}
+
+class Person1 {
+    private String name
+
+    public int getAge() {
+        return 22
+    }
+}
