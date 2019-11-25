@@ -1,0 +1,14 @@
+task ex32Hello {
+    doLast {
+        println 'doLast1'
+    }
+}
+
+ex32Hello.doFirst {
+    println 'doFirst'
+}
+
+ex32Hello.doLast {
+    println project.hasProperty('ex32Hello')
+    println 'doLast2'
+}
