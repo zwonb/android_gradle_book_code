@@ -1,0 +1,13 @@
+//// 配置所有子模块配置
+//subprojects {
+//    repositories {
+//        jcenter()
+//    }
+//}
+//
+//// 配置所有项目配置
+//allprojects {
+//    repositories {
+//        jcenter()
+//    }
+//}

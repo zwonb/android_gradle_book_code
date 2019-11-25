@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/chapter02/chapter02.iml" filepath="$PROJECT_DIR$/.idea/modules/chapter02/chapter02.iml" group="android_gradle_book_code/chapter02" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/chapter02/0/chapter02-0.iml" filepath="$PROJECT_DIR$/.idea/modules/chapter02/0/chapter02-0.iml" group="android_gradle_book_code/chapter02/0" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/chapter02/1/chapter02-1.iml" filepath="$PROJECT_DIR$/.idea/modules/chapter02/1/chapter02-1.iml" group="android_gradle_book_code/chapter02/1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chapter03/chapter03.iml" filepath="$PROJECT_DIR$/.idea/modules/chapter03/chapter03.iml" group="android_gradle_book_code/chapter03" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chapter03/0/chapter03-0.iml" filepath="$PROJECT_DIR$/.idea/modules/chapter03/0/chapter03-0.iml" group="android_gradle_book_code/chapter03/0" />
     </modules>
   </component>
 </project>
