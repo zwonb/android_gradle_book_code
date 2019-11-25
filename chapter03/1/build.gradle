@@ -1,0 +1,24 @@
+task ex31Hello {
+    doLast {
+        println 'hello'
+    }
+}
+
+task ex31World {
+    doLast {
+        println 'world'
+    }
+}
+
+task ex31Main(dependsOn: ex31Hello) {
+    doLast {
+        println "main"
+    }
+}
+
+task ex31MultiTask {
+    dependsOn ex31Hello, ex31World
+    doLast {
+        println "multiTask"
+    }
+}
