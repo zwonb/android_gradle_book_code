@@ -39,6 +39,8 @@ task customProperty {
 
 // 可以编写java代码
 task javaTest {
-    def format = SimpleDateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.LONG, Locale.CHINA)
-    println format.format(new Date())
+    doLast {
+        def format = SimpleDateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.LONG, Locale.CHINA)
+        println format.format(new Date())
+    }
 }
