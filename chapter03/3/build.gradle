@@ -1,3 +1,6 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
 apply plugin: 'java'
 
 // 自定义一个project的属性
@@ -14,7 +17,7 @@ sourceSets.all {
 }
 
 sourceSets {
-    main{
+    main {
         resourcesDir = 'main/res'
     }
     test {
@@ -32,4 +35,10 @@ task customProperty {
             println "${it.name}的resourcesDir是：${it.resourcesDir}"
         }
     }
+}
+
+// 可以编写java代码
+task javaTest {
+    def format = SimpleDateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.LONG, Locale.CHINA)
+    println format.format(new Date())
 }
