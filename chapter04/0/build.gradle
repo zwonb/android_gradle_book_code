@@ -1,0 +1,30 @@
+// 任务名字直接创建
+def Task createTask = task(createTask)
+createTask.doLast {
+    println "创建方法原型为：Task task(name) throws InvalidUserDataException"
+}
+
+// 任务名字+一个对该任务配置的Map
+def Task createTask2 = task(createTask2, group: BasePlugin.BUILD_GROUP)
+createTask2.doLast {
+    println "创建方法原型为：Task task(Map<String, ?> args, String name) throws InvalidUserDataException"
+    println "任务分组：${createTask2.group}"
+}
+
+// 任务名字+闭包配置
+task createTask3 {
+    description '演示任务创建'
+    doLast {
+        println "创建方法原型为：Task task(String name, Closure configureClosure)"
+        println "任务描述：${description}"
+    }
+}
+
+// 最终都是调用这个东西去创建任务
+tasks.create('createTask4') {
+    description '演示任务创建'
+    doLast {
+        println "创建方法原型为：Task create(String name, Closure configureClosure) throws InvalidUserDataException"
+        println "任务描述：${description}"
+    }
+}
