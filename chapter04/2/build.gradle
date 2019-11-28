@@ -1,0 +1,6 @@
+def task = task groupTask
+task.group = BasePlugin.BUILD_GROUP
+task.description = "这是一个构建的引导任务"
+task.doLast {
+    println "group:$group,description:$description"
+}
