@@ -1,0 +1,23 @@
+task accessTask1
+accessTask1.doLast {
+    println "accessTask1.doLast"
+}
+
+task accessTask2
+tasks['accessTask2'].doLast {
+    println "accessTask2.doLast"
+}
+
+task accessTask3
+tasks['accessTask3'].doLast {
+    println tasks.findByPath(':chapter04:1:accessTask3')
+    println tasks.getByPath('accessTask3')
+    println tasks.findByPath('adbsadf123')
+}
+
+task accessTask4
+tasks['accessTask4'].doLast {
+    println tasks.findByName('accessTask4')
+    println tasks.getByName('accessTask4')
+    println tasks.findByName('adbsadf123')
+}
