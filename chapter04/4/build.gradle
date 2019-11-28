@@ -1,0 +1,14 @@
+task orderTask1 {
+    doLast {
+        println 'orderTask1'
+    }
+}
+
+task orderTask2 {
+    doLast {
+        println 'orderTask2'
+    }
+}
+
+// 会先执行 orderTask2
+orderTask1.mustRunAfter orderTask2
