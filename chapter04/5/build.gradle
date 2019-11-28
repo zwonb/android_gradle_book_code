@@ -1,0 +1,7 @@
+task disabledTask {
+    doLast {
+        println 'disabledTask'
+    }
+}
+
+disabledTask.enabled = false
