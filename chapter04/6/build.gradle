@@ -1,0 +1,33 @@
+final String BUILD_APPS_ALL = "all"
+final String BUILD_APPS_SHOUFA = "shoufa"
+final String BUILD_APPS_EXCLUDE_SHOUFA = "exclude_shoufa"
+
+task qqRelease {
+    doLast {
+        println '打应用宝的包'
+    }
+}
+
+task baiduRelease {
+    doLast {
+        println '打百度的包'
+    }
+}
+
+task huaWeiRelease {
+    doLast {
+        println '打华为的包'
+    }
+}
+
+task miuiRelease {
+    doLast {
+        println '打小米的包'
+    }
+}
+
+task build {
+    group BasePlugin.BUILD_GROUP
+    description '打渠道包'
+}
+
