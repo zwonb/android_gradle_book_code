@@ -31,3 +31,50 @@ task build {
     description '打渠道包'
 }
 
+
+build.dependsOn qqRelease,baiduRelease,huaWeiRelease,miuiRelease
+
+qqRelease.onlyIf {
+    def execute = false
+    if (project.hasProperty('build_apps')) {
+        def buildApps = project.property('build_apps')
+        execute = BUILD_APPS_SHOUFA == buildApps || BUILD_APPS_ALL == buildApps
+    } else {
+        execute = true
+    }
+    execute
+}
+
+baiduRelease.onlyIf {
+    def execute = false
+    if (project.hasProperty('build_apps')) {
+        def buildApps = project.property('build_apps')
+        execute = BUILD_APPS_SHOUFA == buildApps || BUILD_APPS_ALL == buildApps
+    } else {
+        execute = true
+    }
+    execute
+}
+
+huaWeiRelease.onlyIf {
+    def execute = false
+    if (project.hasProperty('build_apps')) {
+        def buildApps = project.property('build_apps')
+        execute = BUILD_APPS_EXCLUDE_SHOUFA == buildApps || BUILD_APPS_ALL == buildApps
+    } else {
+        execute = true
+    }
+    execute
+}
+
+miuiRelease.onlyIf {
+    def execute = false
+    if (project.hasProperty('build_apps')) {
+        def buildApps = project.property('build_apps')
+        execute = BUILD_APPS_EXCLUDE_SHOUFA == buildApps || BUILD_APPS_ALL == buildApps
+    } else {
+        execute = true
+    }
+    execute
+}
+
