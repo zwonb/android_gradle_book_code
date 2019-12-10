@@ -1,0 +1,12 @@
+tasks.addRule("对该规则的一个描述，便于调试、查看等") { String taskName ->
+    task(taskName) {
+        doLast {
+            println "该${taskName}任务不存在，请查证后在执行"
+        }
+    }
+}
+
+task ruleTask {
+    dependsOn missTask
+}
+
