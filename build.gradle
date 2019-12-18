@@ -1,13 +1,17 @@
-//// 配置所有子模块配置
-//subprojects {
-//    repositories {
-//        jcenter()
-//    }
-//}
-//
-//// 配置所有项目配置
-//allprojects {
-//    repositories {
-//        jcenter()
-//    }
-//}
+// 配置所有子模块配置
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        // 应用第三方插件
+//        classpath 'org.jacoco:org.jacoco.core:0.7.4.201502262128'
+    }
+}
+
+// 配置所有项目配置
+allprojects {
+    repositories {
+        jcenter()
+    }
+}

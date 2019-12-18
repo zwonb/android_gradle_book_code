@@ -1,3 +1,27 @@
-apply plugin:'java'
+apply plugin: 'java'
 apply plugin: org.gradle.api.plugins.JavaPlugin
 apply plugin: JavaPlugin
+
+apply from: 'version.gradle'
+
+task versionInfo {
+    doLast {
+        println "App版本是：$versionName,版本号是：$versionCode"
+    }
+}
+
+apply {
+    plugin 'java'
+}
+
+apply(new Action<ObjectConfigurationAction>() {
+    @Override
+    void execute(ObjectConfigurationAction objectConfigurationAction) {
+        objectConfigurationAction.plugin('java')
+    }
+})
+
+// dsl
+//plugins {
+//    id 'java'
+//}
