@@ -1,26 +1,12 @@
-//apply plugin: CustomPlugin
-//
-//class CustomPlugin implements Plugin<Project> {
-//
-//    @Override
-//    void apply(Project target) {
-//        target.task("customTask").doLast {
-//            println "这是一个通过自定义插件方式创建的任务"
-//        }
-//    }
-//}
+apply plugin: 'java'
 
-
-//buildscript {
-//    dependencies {
-//        classpath files('libs/customplugin.jar')
-//    }
-//}
-
-apply plugin: 'groovy'
-//apply plugin: 'com.zwonb.plugins.CustomPlugin'
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://www.mavenurl.com'
+    }
+}
 
 dependencies {
-    implementation gradleApi()
-    implementation localGroovy()
+    implementation 'com.squareup.okhttp3:okhttp:3.0.1'
 }
