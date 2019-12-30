@@ -1,0 +1,26 @@
+//apply plugin: CustomPlugin
+//
+//class CustomPlugin implements Plugin<Project> {
+//
+//    @Override
+//    void apply(Project target) {
+//        target.task("customTask").doLast {
+//            println "这是一个通过自定义插件方式创建的任务"
+//        }
+//    }
+//}
+
+
+//buildscript {
+//    dependencies {
+//        classpath files('libs/customplugin.jar')
+//    }
+//}
+
+apply plugin: 'groovy'
+//apply plugin: 'com.zwonb.plugins.CustomPlugin'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+}
