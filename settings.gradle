@@ -28,3 +28,6 @@ include ':chapter04:7'
 
 include ':chapter05:0'
 include ':chapter05:1'
+
+include ':chapter06:0'
+include ':chapter06:1'
