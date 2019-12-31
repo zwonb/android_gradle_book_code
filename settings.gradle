@@ -37,5 +37,6 @@ include ':chapter06:4'
 include ':chapter06:4:app'
 include ':chapter06:4:base'
 include ':chapter06:5'
-include ':chapter06:6'
-include ':chapter06:7'
+
+include ':chapter07:0'
+include ':chapter07:1'
