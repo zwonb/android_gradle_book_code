@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+sourceSets {
+    main {
+        // 这里对main SourceSet 配置
+    }
+}
+
+task sourceSetsTask {
+    sourceSets.all {
+        println name
+    }
+}
