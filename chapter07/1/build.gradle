@@ -1,12 +1,1 @@
-apply plugin: 'java'
-
-repositories {
-    mavenCentral()
-    maven {
-        url 'http://www.mavenurl.com'
-    }
-}
-
-dependencies {
-    implementation 'com.squareup.okhttp3:okhttp:3.0.1'
-}
+// android gradle 工程示例(再熟悉不过了省略)
