@@ -1,0 +1,5 @@
+apply plugin: 'java'
+
+dependencies {
+    implementation project(':chapter06:4:base')
+}
