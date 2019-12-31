@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+task publishJar(type: Jar)
+
+group 'com.zwonb.gradle.demo'
+version '1.0.0'
+
+artifacts {
+    archives publishJar
+}
+
+uploadArchives {
+    repositories {
+        flatDir {
+            name 'libs'
+            // 发布到项目目录
+            dirs "$projectDir/libs"
+            // 发布到用户版本地 .m2/repository
+//            mavenLocal()
+            // 发布到远程仓库
+//            mavenDeployer {
+//                repository(url: 'https://maven.aliyun.com/repository/public') {
+//                    authentication(userName: 'zwonb', password: "password")
+//                }
+//            }
+        }
+    }
+}
