@@ -1,0 +1,56 @@
+// 可以放到根目录里面，这样不用每个子项目都写
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        applicationId "com.zwonb.app"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'abi', 'version'
+    productFlavors {
+        google {
+            dimension 'version'
+            applicationId = 'com.zwonb.app.google'
+            consumerProguardFiles 'proguard-rules.pro', 'proguard-android.txt'
+            manifestPlaceholders = [KEY: '我是google']
+        }
+        baidu {
+            dimension 'version'
+        }
+        x86 {
+            dimension 'abi'
+        }
+        arm {
+            dimension 'abi'
+        }
+    }
+
+
+}
